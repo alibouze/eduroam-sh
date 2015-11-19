@@ -1,1 +1,1 @@
-Download and run eduroam-linux-BloT.sh
+*Download and run eduroam-linux-BloT.sh
