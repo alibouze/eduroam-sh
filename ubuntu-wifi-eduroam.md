@@ -29,18 +29,18 @@ Skriv följande i filen:
 
 + Redigera filen `/etc/networks/interfaces` och skriv in följande i filen (om det inte redan står). Innan du redigerar bör du ta reda på vad ditt nätverkskort heter. Nedan används `wlan0`, men det kan heta något annat t ex `wlp1s0`. För att ta reda på vad ditt heter kan du kolla output från `ifconfig` eller `iwconfig`. Om det heter något annat, byt ut `wlan0` till aktuellt namn.
 
-`auto wlan0
-allow-hotplug wlan0
-iface wlan0 inet manual
-wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf`
+      auto wlan0
+      allow-hotplug wlan0
+      iface wlan0 inet manual
+      wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 
 OBS!
 Om ovanstående inte fungerar kan du testa att byta ut till att få ett ip via dhcp;
 
-`auto wlan0  
-allow-hotplug wlan0  
-iface wlan0 inet dhcp  
-wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf`  
+      auto wlan0  
+      allow-hotplug wlan0  
+      iface wlan0 inet dhcp  
+      wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf  
 Kör sedan;
 `$ sudo ifdown wlan0 && ifup wlan0`
 testa sedan t ex genom att pinga;
