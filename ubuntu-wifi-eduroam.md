@@ -49,7 +49,19 @@ testa sedan t ex genom att pinga;
 + Till sist - testa att reboota för att kolla så att allt funkar.   
 Med kommandot ifconfig kan du kolla om ditt nätverkskort har fått en IP-adress av DHCP-servern. Leta efter "wlan0" (eller vad ditt nätverkskort heter) i outputen.
 
-`sudo ifconfig`
+`$ sudo ifconfig`
 
 Du kan behöva;  
 `$ sudo ifup wlan0` 
+
+
+# utan eduroam  
+
+Du behöver då endast editera `/etc/network/interfaces` till något i stil med;  
+
+            auto wlan0  
+            iface wlan0 inet dhcp
+            wpa-ssid namn-pånätverket
+            wpa-psk lösenord  
+
+och sedan förmodligen göra en `$ sudo ifdown wlan0 && ifup wlan0`
