@@ -57,11 +57,25 @@ Du kan behöva;
 
 # utan eduroam  
 
-Du behöver då endast editera `/etc/network/interfaces` till något i stil med;  
+Om du blir tilldelad ett ip via dhcp behöver du endast editera `/etc/network/interfaces` genom att lägga till något i stil med;  
 
             auto wlan0  
             iface wlan0 inet dhcp
-            wpa-ssid namn-pånätverket
-            wpa-psk lösenord  
+            wpa-ssid namn_på_nätverket
+            wpa-psk lösenord_för_nätverket  
 
 och sedan förmodligen göra en `$ sudo ifdown wlan0 && ifup wlan0`
+
+<br>
+Om du har ett ip du ska använda editerar du samma fil något i stil med;  
+
+      auto wlan0
+      iface wlan0 inet static
+      address 192.168.1.150
+      netmask 255.255.255.0
+      gateway 192.168.1.1
+      wpa-ssid namn_på_nätverket
+      wpa-psk lösenord_för_nätverket
+      dns-nameservers 8.8.8.8 192.168.1.1  
+
+_notera att google's nameserver används_
