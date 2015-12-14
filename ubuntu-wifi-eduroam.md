@@ -1,6 +1,7 @@
 # Ansluta en Ubuntu server till eduroam med WiFi
 
-För att ansluta till eduroam via WiFi från din ubuntu server krävs lite konfiguration. Följande guide gäller uppkoppling mot eduroam på BTH (Blekinge tekniska högskola).
+För att ansluta till eduroam via WiFi från din ubuntu server krävs lite konfiguration. Följande guide gäller uppkoppling mot eduroam på BTH (Blekinge tekniska högskola).  
+Eduroam är ett s.k enterprise nätverk (PEAP).  
 
 + Se till att ditt WiFi-kort eller WiFi-dongel fungerar med drivrutin etc.
 Ta reda på namnet på ditt nätverkskort (dongel). Vanligen: `wlan0`
@@ -56,7 +57,7 @@ Du kan behöva;
 
 
 # utan eduroam  
-
+Dvs ett 'vanligt' nätverk (icke enterprise).  
 Om du blir tilldelad ett ip via dhcp behöver du endast editera `/etc/network/interfaces` genom att lägga till något i stil med;  
 
             auto wlan0  
