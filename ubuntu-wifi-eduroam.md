@@ -1,14 +1,14 @@
-Ansluta en Ubuntu server till eduroam med WiFi
+# Ansluta en Ubuntu server till eduroam med WiFi
 
 För att ansluta till eduroam via WiFi från din ubuntu server krävs lite konfiguration. Följande guide gäller uppkoppling mot eduroam på BTH (Blekinge tekniska högskola).
 
-Se till att ditt WiFi-kort eller WiFi-dongel fungerar med drivrutin etc.
++ Se till att ditt WiFi-kort eller WiFi-dongel fungerar med drivrutin etc.
 Ta reda på namnet på ditt nätverkskort (dongel). Vanligen: wlan0
 Ladda ner certifikatet för att få ansluta till BTHs nätverk och spara det på lämplig plats.
 
-sudo wget -O /etc/ssl/certs/AddTrust-External-CA-Root.cer https://raw.githubusercontent.com/dite-bth/hackday/master/151211/resources/AddTrust-External-CA-Root.cer
+`$ sudo wget -O /etc/ssl/certs/AddTrust-External-CA-Root.cer https://raw.githubusercontent.com/dite-bth/hackday/master/151211/resources/AddTrust-External-CA-Root.cer`
 
-Redigera filen /etc/wpa_supplicant/wpa_supplicant.conf med en texteditor (exemplen nedan använder vim och nano). Tänk på att du måste göra detta med "super user"-rättigheter (sudo)
++ Redigera filen /etc/wpa_supplicant/wpa_supplicant.conf med en texteditor (exemplen nedan använder vim och nano). Tänk på att du måste göra detta med "super user"-rättigheter (sudo)
 
 sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
 eller
