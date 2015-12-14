@@ -9,14 +9,14 @@ Ladda ner certifikatet för att få ansluta till BTHs nätverk och spara det på
 `$ sudo wget -O /etc/ssl/certs/AddTrust-External-CA-Root.cer https://raw.githubusercontent.com/mattische/eduroam-sh/master/AddTrust-External-CA-Root.cer`
 
 + Redigera filen `/etc/wpa_supplicant/wpa_supplicant.conf` med en texteditor (exemplen nedan använder vim och nano).  
-Om den inte finns - skapa den.  
-`$ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf` 
+      Om den inte finns - skapa den.  
+      `$ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf` 
 
 
 
-Skriv följande i filen:
+      Skriv följande i filen:
 
-      `network={  
+      network={  
       ssid="eduroam"  
       key_mgmt=WPA-EAP  
       auth_alg=OPEN  
@@ -25,7 +25,7 @@ Skriv följande i filen:
       identity="ditt användarnamn"  
       phase2="auth=MSCHAPV2"  
       password="ditt lösenord"  
-      }`  
+      }  
 
 + Redigera filen `/etc/networks/interfaces` och skriv in följande i filen (om det inte redan står). Innan du redigerar bör du ta reda på vad ditt nätverkskort heter. Nedan används `wlan0`, men det kan heta något annat t ex `wlp1s0`. För att ta reda på vad ditt heter kan du kolla output från `ifconfig` eller `iwconfig`. Om det heter något annat, byt ut `wlan0` till aktuellt namn.
 
