@@ -16,16 +16,16 @@ Om den inte finns - skapa den.
 
 Skriv följande i filen:
 
-`network={
-ssid="eduroam"
-key_mgmt=WPA-EAP
-auth_alg=OPEN
-eap=PEAP
-ca_cert="/etc/ssl/certs/AddTrust-External-CA-Root.cer"
-identity="ditt användarnamn"
-phase2="auth=MSCHAPV2"
-password="ditt lösenord"
-}`
+`network={  
+ssid="eduroam"  
+key_mgmt=WPA-EAP  
+auth_alg=OPEN  
+eap=PEAP  
+ca_cert="/etc/ssl/certs/AddTrust-External-CA-Root.cer"  
+identity="ditt användarnamn"  
+phase2="auth=MSCHAPV2"  
+password="ditt lösenord"  
+}`  
 
 + Redigera filen `/etc/networks/interfaces` och skriv in följande i filen (om det inte redan står). Innan du redigerar bör du ta reda på vad ditt nätverkskort heter. Nedan används `wlan0`, men det kan heta något annat t ex `wlp1s0`. För att ta reda på vad ditt heter kan du kolla output från `ifconfig` eller `iwconfig`. Om det heter något annat, byt ut `wlan0` till aktuellt namn.
 
