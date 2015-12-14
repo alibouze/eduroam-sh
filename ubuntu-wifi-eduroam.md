@@ -14,7 +14,7 @@ Ladda ner certifikatet för att få ansluta till BTHs nätverk och spara det på
 
 
 
-      Skriv följande i filen:
+Skriv följande i filen:
 
       network={  
       ssid="eduroam"  
