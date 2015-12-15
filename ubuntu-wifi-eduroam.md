@@ -29,7 +29,7 @@ Skriv följande i filen:
       }  
 
 + Redigera filen `/etc/networks/interfaces` och skriv in följande i filen (om det inte redan står). Innan du redigerar bör du ta reda på vad ditt nätverkskort heter. Nedan används `wlan0`, men det kan heta något annat t ex `wlp1s0`. För att ta reda på vad ditt heter kan du kolla output från `ifconfig` eller `iwconfig`. Om det heter något annat, byt ut `wlan0` till aktuellt namn.  
-Om du har ett fast/statiskt ip (vanligtvis via ethernet):  
+**Om du har ett fast/statiskt ip** (vanligtvis via ethernet):  
 
       `auto wlan0`  
       `allow-hotplug wlan0`  
@@ -37,7 +37,7 @@ Om du har ett fast/statiskt ip (vanligtvis via ethernet):
       `wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf`  
 
   OBS!
-  Om DU INTE HAR ETT FAST IP, dvs ovanstående gäller eller fungerar inte - byt ut till att få ett ip via dhcp;
+  **Om du INTE HAR ETT STATISKT IP**, dvs ovanstående gäller eller fungerar inte - byt ut till att få ett ip via dhcp;
 
       auto wlan0  
       allow-hotplug wlan0  
