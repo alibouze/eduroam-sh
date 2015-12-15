@@ -28,7 +28,7 @@ Skriv följande i filen:
       password="ditt lösenord"  
       }  
 
-+ Redigera filen `/etc/networks/interfaces` och skriv in det som står nedan i filen (om det inte redan står). Innan du redigerar bör du ta reda på vad ditt nätverkskort heter. Nedan används `wlan0`, men det kan heta något annat t ex `wlp1s0`. För att ta reda på vad ditt heter kan du kolla output från `ifconfig` eller `iwconfig`. Om det heter något annat, byt ut `wlan0` till aktuellt namn.  
++ Redigera filen `/etc/networks/interfaces` och **LÄGG TILL** det som står nedan i filen (om det inte redan står). Innan du redigerar bör du ta reda på vad ditt nätverkskort heter. Nedan används `wlan0`, men det kan heta något annat t ex `wlp1s0`. För att ta reda på vad ditt heter kan du kolla output från `ifconfig` eller `iwconfig`. Om det heter något annat, byt ut `wlan0` till aktuellt namn.  
 **Om du har ett fast/statiskt ip** (vanligtvis via ethernet):  
 
       `auto wlan0`  
@@ -70,7 +70,7 @@ Om du blir tilldelad ett ip via dhcp behöver du endast editera `/etc/network/in
 och sedan förmodligen göra en `$ sudo ifdown wlan0 && ifup wlan0`
 
 <br>
-Om du har ett ip du ska använda editerar du samma fil något i stil med;  
+Om du har ett ip du ska använda editerar du samma fil något i stil med (där address är ditt ip);  
 
       auto wlan0
       iface wlan0 inet static
