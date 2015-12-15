@@ -29,6 +29,7 @@ Skriv följande i filen:
       }  
 
 + Redigera filen `/etc/networks/interfaces` och skriv in följande i filen (om det inte redan står). Innan du redigerar bör du ta reda på vad ditt nätverkskort heter. Nedan används `wlan0`, men det kan heta något annat t ex `wlp1s0`. För att ta reda på vad ditt heter kan du kolla output från `ifconfig` eller `iwconfig`. Om det heter något annat, byt ut `wlan0` till aktuellt namn.  
+Om du har ett fast/statiskt ip (vanligtvis via ethernet):  
 
       `auto wlan0`  
       `allow-hotplug wlan0`  
@@ -36,16 +37,17 @@ Skriv följande i filen:
       `wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf`  
 
 OBS!
-Om ovanstående inte fungerar kan du testa att byta ut till att få ett ip via dhcp;
+Om DU INTE HAR ETT FAST IP, dvs ovanstående gäller eller fungerar inte - byt ut till att få ett ip via dhcp;
 
       auto wlan0  
       allow-hotplug wlan0  
       iface wlan0 inet dhcp  
       wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf  
+      
 Kör sedan;
-`$ sudo ifdown wlan0 && ifup wlan0`
-testa sedan t ex genom att pinga;
-`$ ping -c3 www.google.com`
+      `$ sudo ifdown wlan0 && ifup wlan0`
+      testa sedan t ex genom att pinga;
+      `$ ping -c3 www.google.com`
 
 + Till sist - testa att reboota för att kolla så att allt funkar.   
 Med kommandot ifconfig kan du kolla om ditt nätverkskort har fått en IP-adress av DHCP-servern. Leta efter "wlan0" (eller vad ditt nätverkskort heter) i outputen.
