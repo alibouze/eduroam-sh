@@ -36,7 +36,6 @@ Skriv följande i filen:
       `iface wlan0 inet manual`  
       `wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf`  
 
-  OBS!
   **Om du INTE HAR ETT STATISKT IP**, dvs ovanstående gäller eller fungerar inte - byt ut till att få ett ip via dhcp;
 
       auto wlan0  
@@ -53,10 +52,10 @@ Skriv följande i filen:
 + Till sist - testa att reboota för att kolla så att allt funkar.   
 Med kommandot ifconfig kan du kolla om ditt nätverkskort har fått en IP-adress av DHCP-servern. Leta efter "wlan0" (eller vad ditt nätverkskort heter) i outputen.
 
-`$ sudo ifconfig`
+  `$ sudo ifconfig`
 
-Du kan behöva;  
-`$ sudo ifup wlan0` 
+  Du kan behöva;  
+  `$ sudo ifup wlan0` 
 
 
 # utan eduroam  
