@@ -36,18 +36,19 @@ Om du har ett fast/statiskt ip (vanligtvis via ethernet):
       `iface wlan0 inet manual`  
       `wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf`  
 
-OBS!
-Om DU INTE HAR ETT FAST IP, dvs ovanstående gäller eller fungerar inte - byt ut till att få ett ip via dhcp;
+  OBS!
+  Om DU INTE HAR ETT FAST IP, dvs ovanstående gäller eller fungerar inte - byt ut till att få ett ip via dhcp;
 
       auto wlan0  
       allow-hotplug wlan0  
       iface wlan0 inet dhcp  
       wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf  
       
-Kör sedan;
-      `$ sudo ifdown wlan0 && ifup wlan0`
+  Kör sedan;
+
+      $ sudo ifdown wlan0 && ifup wlan0`
       testa sedan t ex genom att pinga;
-      `$ ping -c3 www.google.com`
+      `$ ping -c3 www.google.com
 
 + Till sist - testa att reboota för att kolla så att allt funkar.   
 Med kommandot ifconfig kan du kolla om ditt nätverkskort har fått en IP-adress av DHCP-servern. Leta efter "wlan0" (eller vad ditt nätverkskort heter) i outputen.
