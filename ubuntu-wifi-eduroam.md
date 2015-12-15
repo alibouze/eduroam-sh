@@ -47,6 +47,7 @@ Skriv följande i filen:
 
       $ sudo ifdown wlan0 && ifup wlan0  
   testa sedan t ex genom att pinga;  
+  
       $ ping -c3 www.google.com  
 
 + Till sist - testa att reboota för att kolla så att allt funkar.   
