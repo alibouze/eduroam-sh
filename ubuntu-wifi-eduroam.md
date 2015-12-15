@@ -45,9 +45,9 @@ Skriv följande i filen:
       
   Kör sedan;
 
-      $ sudo ifdown wlan0 && ifup wlan0`
-      testa sedan t ex genom att pinga;
-      `$ ping -c3 www.google.com
+      $ sudo ifdown wlan0 && ifup wlan0  
+  testa sedan t ex genom att pinga;  
+      $ ping -c3 www.google.com  
 
 + Till sist - testa att reboota för att kolla så att allt funkar.   
 Med kommandot ifconfig kan du kolla om ditt nätverkskort har fått en IP-adress av DHCP-servern. Leta efter "wlan0" (eller vad ditt nätverkskort heter) i outputen.
